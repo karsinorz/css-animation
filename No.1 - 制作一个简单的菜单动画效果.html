@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>No.1 - 制作一个简单的菜单动画效果</title>
+	<style type="text/css">
+*{
+  padding:0;
+  margin:0;
+  font-family:"微软雅黑";
+}
+.main{
+  text-align:center;
+	margin-top:30px;
+}
+#ps{
+  font-size:30px;
+  transition:color 0.5s;
+}
+#btn{
+  font-size:20px;
+  width:120px;
+  height:35px;
+  background:#fff;
+  border:1px solid #999;
+  border-radius:5px;
+  outline:none;
+  font-weight:bold;
+	margin-top:20px;
+}
+#change{
+  width:0;
+  height:5px;
+	background:#eee;
+	margin:10px auto;
+  transition: width 0.5s,background 0.5s
+}
+	</style>
+</head>
+<body>
+<div class="main" id="main">
+  <p id="ps">前端学院</p>
+  <div id="change"></div>
+  <input type="button" value="切换样式" id="btn">
+</div>
+<script>
+function byId(id){
+  return typeof id==="string"?document.getElementById(id):id;
+}
+var ps=byId("ps"),
+    btn=byId("btn"),
+    change=byId("change");
+btn.onclick=function(){
+	if(ps.style.color==""){
+		 ps.style.color="#4068f1";
+		 change.style.width="120px"; 
+		 change.style.background="#4068f1";
+	}else{
+		 change.style.width=""; 		
+		 ps.style.color="";
+	}
+ 
+}
+btn.onmousedown=function(){
+	this.style.background="#4068f1";
+}
+btn.onmouseup=function(){
+	this.style.background="";
+}
+</script>
+</body>
+</html>
