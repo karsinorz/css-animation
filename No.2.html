@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>No.2 - 初步接触 CSS 2D 变形</title>
+</head>
+<style>
+	div{
+  width:100px;
+  height:100px;
+  background:#ddd;
+  border:1px solid #aaa;
+  text-align:center;
+  line-height:100px;
+}
+.fl{
+  float:left;
+  margin:30px;
+}
+.one{
+  transform: skew(30deg);
+}
+.two{
+  transform: scale(0.5,1);
+}
+.thr{
+  transform: rotate(45deg);
+}
+.fou{
+  transform: translate(10px,20px);
+}
+.fiv{
+  transform:skew(30deg) scale(0.5,1) rotate(45deg) translate(10px,20px);
+}
+</style>
+<body>
+	<!--   盒子0 -->
+  <div class="fl zer">box0</div>
+<!--   向左倾斜30度 -->
+  <div class="fl one">box1</div>
+<!-- 压缩2倍(宽度压缩，高度不变) -->
+  <div class="fl two">box2</div>
+<!-- 旋转45度 -->
+  <div class="fl thr">box3</div>
+<!-- x轴位移10px,y轴位置20px -->
+  <div class="fl fou">box4</div>
+<!-- 把上面的效果全部用在这里 -->
+  <div class="fl fiv">box5</div>
+
+</body>
+</html>
