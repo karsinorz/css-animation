@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>反转图片</title>
+	<style type="text/css">
+		.main{
+			width:350px;
+			height:250px;
+			perspective: 1000px;
+			transform-style:3d;
+			margin:30px auto;
+			position: relative;
+		}
+		.img{
+			position: absolute;
+			transition: all 1s ease;
+			backface-visibility:hidden;
+		}
+		.back{
+			transform:rotateY(-180deg);
+		}
+		.main:hover .front{
+			transform:rotateY(180deg);
+		}
+		.main:hover .back{
+			transform:rotateY(0deg);
+		}
+	</style>
+</head>
+<body>
+	<div class="main"><!-- 容器 -->
+		<div class="img back">
+			<!-- 图片1 -->
+			<img src="img/back.jpg">
+		</div>
+		<div class="img front">
+			<!-- 图片2 -->
+			<img src="img/front.jpg">
+		</div>
+	</div>
+</body>
+</html>
